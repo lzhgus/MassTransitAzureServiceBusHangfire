@@ -7,7 +7,7 @@ namespace Company.Consumers
     {
         public MtConTwoConsumerDefinition()
         {
-            EndpointName = "scheduler";
+            EndpointName = "mt-consumer-2";
         }
 
         protected override void ConfigureConsumer(IReceiveEndpointConfigurator endpointConfigurator, IConsumerConfigurator<MtConTwoConsumer> consumerConfigurator)

@@ -25,9 +25,11 @@ namespace Company.Consumers
         {
             _logger.LogInformation("Received the first message");
 
-            Uri scheduler = new Uri("queue:scheduler");
+            Uri scheduler = new Uri("queue:mt-consumer-2");
 
-            await context.ScheduleRecurringSend(scheduler, new PollExternalSystemSchedule(),  context.Message);
+            await context.ScheduleSend(scheduler, DateTime.Now.AddSeconds(30), context.Message);
+
+            // await context.ScheduleRecurringSend(scheduler, new PollExternalSystemSchedule(),  context.Message);
 
         }
     }
